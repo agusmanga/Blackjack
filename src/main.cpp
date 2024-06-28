@@ -26,7 +26,7 @@ int main() {
         std::cout << carta->getNumero() << " de " << carta->getPalo() << std::endl;
     }
 
-    std::cout << "Desea Comenzar un juego de cartas? (1 = Si, 0 = No)" << std::endl;
+    std::cout << "Desea Comenzar un juego de cartas? \n (1 = Si, 0 = No)" << std::endl;
     int respuesta = input();
     if (respuesta == 1){
         std::cout << "Comenzando juego de cartas..." << std::endl;
@@ -45,7 +45,7 @@ int main() {
         std::cout << carta->getNumero() << " de " << carta->getPalo() << std::endl;
     }
         if (deck->getCards().size() != 0){
-        std::cout << "Desea sacar otra carta? (1 = Si, 0 = No)" << std::endl;
+        std::cout << "Desea sacar otra carta?\n  (1 = Si, 0 = No)" << std::endl;
         int respuesta = input();
         if (respuesta == 0){
             std::cout << "Fin del juego" << std::endl;
