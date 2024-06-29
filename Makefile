@@ -18,6 +18,7 @@ run: build
 	./build/main.o \
 	./build/Dealer.o \
 	./build/User.o \
+	./build/controladorJuego.o \
 	
 	@mkdir -p $$(dirname $@)
 	$(CXX) -o $@ $(CXXFLAGS) $^

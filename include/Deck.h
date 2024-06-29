@@ -15,10 +15,11 @@ class Deck{
     std::vector <Card*> getCards();
     int getSize();
 
-
+    std::vector<Card*> inicializarDeck();
     void shuffle();
 
     Card* dealCard();
+    void resetDeck();
 
 };
 

@@ -13,3 +13,7 @@ int User::getSuma(){
 void User::setSuma(int numero){
     suma = suma + numero;
 }
+
+void User::sumaReset(){
+    suma = 0;
+}

@@ -15,6 +15,7 @@ class Dealer{
     std::vector<Card*> getCartas();
     int getSuma();
     void setSuma(int numero);
+    void sumaReset();
 
 };
 

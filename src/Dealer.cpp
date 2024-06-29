@@ -13,3 +13,7 @@ int Dealer::getSuma(){
 void Dealer::setSuma(int numero){
     suma = suma + numero;
 }
+
+void Dealer::sumaReset(){
+    suma = 0;
+}

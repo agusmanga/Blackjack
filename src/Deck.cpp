@@ -2,14 +2,7 @@
 
 Deck::Deck() {
     
-    std::string palos[4] = {"Corazones", "Diamantes", "Treboles", "Picas"};
-    for (int i = 0; i < 1; i++) {
-        for (int j = 1; j < 13; j++) {
-            Card* card = new Card(j,palos[i]);
-            cards.push_back(card);
-            
-        }
-    }
+    cards = inicializarDeck();
     size = cards.size();
 }
 
@@ -29,7 +22,40 @@ void Deck::shuffle(){
 }
 
 Card* Deck::dealCard(){
-    Card* carta = this->getCards()[getCards().size()-1];
-    cards.pop_back();
-    return carta;
+    if (this->getCards().size() >= 1){
+        Card* carta = this->getCards()[getCards().size()-1];
+        cards.pop_back();
+        size = size-1;
+        return carta;
+    }
+    else{
+        resetDeck();
+        Card* carta = this->getCards()[getCards().size()-1];
+        cards.pop_back();
+        size = size-1;
+        return carta;
+    }
+}
+
+void Deck::resetDeck(){
+    cards.clear();
+    std::cout<<"reiniciando Deck...\n";
+    cards = inicializarDeck();
+    size = cards.size();
+    shuffle();
+    
+}
+
+std::vector<Card*> Deck::inicializarDeck(){
+    std::vector <Card*> retorno;
+    std::string palos[4] = {"Corazones", "Diamantes", "Treboles", "Picas"};
+
+    for (int i = 0; i < 4; i++) {
+        for (int j = 1; j < 13; j++) {
+            Card* card = new Card(j,palos[i]);
+            retorno.push_back(card);
+            
+        }
+    }
+    return retorno;
 }
