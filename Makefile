@@ -1,4 +1,4 @@
-CXXFLAGS=-Wall -Wextra -ggdb -std=c++17 -frtti
+CXXFLAGS=-Wall -Wextra -ggdb -std=c++17 -frtti 
 
 PHONY: all build clean run
 
@@ -16,6 +16,8 @@ run: build
 	./build/Card.o \
 	./build/Deck.o \
 	./build/main.o \
+	./build/Dealer.o \
+	./build/User.o \
 	
 	@mkdir -p $$(dirname $@)
 	$(CXX) -o $@ $(CXXFLAGS) $^

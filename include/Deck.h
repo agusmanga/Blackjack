@@ -1,5 +1,9 @@
+#ifndef DECK_H
+#define DECK_H
+
 #include "Card.h"
 #include "utils.h"
+#include "Dealer.h"
 
 class Deck{
     std::vector<Card*> cards;
@@ -17,3 +21,5 @@ class Deck{
     Card* dealCard();
 
 };
+
+#endif //DECH_H
