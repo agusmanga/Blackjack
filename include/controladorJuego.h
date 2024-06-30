@@ -7,6 +7,8 @@ class ControladorJuego{
     User* usuario;
     Dealer* dealer;
     Deck* deck;
+    std::vector <Card*> cartasusuario;
+     std::vector <Card*> cartasdealer;
 
     public:
     ControladorJuego();
@@ -17,12 +19,15 @@ class ControladorJuego{
 
     User* getUsuario();
     Dealer* getDealer();
+    std::vector <Card*>getCartasDealer();
+    std::vector <Card*>getCartasUsuario();
 
     void iniciarJuego();
     void repartirCartasInicial();
     void repartirCarta();
     void nuevaRonda();
     
+    void imprimirCartas();
 
     bool igualar();
 

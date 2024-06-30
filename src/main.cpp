@@ -65,7 +65,7 @@ void clearScreen() {
 int main() {
     ControladorJuego* controladorJuego = new ControladorJuego();
     controladorJuego->iniciarJuego();
-
+    clearScreen();
     std::cout << "---- BLACKJACK ----\n";
 
     inputEnter("Presione Enter para comenzar");
@@ -82,6 +82,7 @@ while (true){
                 controladorJuego->repartirCarta();
                 if (controladorJuego->getUsuario()->getSuma()<21){
                     pregunta = inputInt("Desea sacar Otra carta? (1-si, 0-no)");
+                    
                 }
                 else {
                     break;
@@ -94,25 +95,35 @@ while (true){
     if (controladorJuego->getUsuario()->getSuma()<=21){
         bool retorno = controladorJuego->igualar();
         if (retorno){
-            std::cout << "gana el dealer\n";
+            std::cout << std::endl;
+            std::cout << std::right << std::setw(50) << "||¡¡GANA EL DEALER :( !!||"<<std::endl;
         }
         else {
             if (controladorJuego->getUsuario()->getSuma() == controladorJuego->getDealer()->getSuma()){
-                std::cout << "empate\n";
+                std::cout << std::endl;
+                std::cout <<std::left << std::setw(40) << std::left << std::setw(20) << "||EMPATE -_-||"<<std::endl;
             }
             else{
-            std::cout << "tu ganas\n";
+                std::cout << std::endl;
+                std::cout <<"||¡¡TU GANAS!!||"<<std::endl;
             }
         }
 
     }
     else {
-        std::cout << "Gana el dealer\n";
+        std::cout << std::endl;
+        std::cout << std::right << std::setw(50) << "||¡¡GANA EL DEALER :( !!||"<<std::endl;
     }
+    std::cout << std::endl;
+    std::string suma = "Tu suma: " + std::to_string(controladorJuego->getUsuario()->getSuma());
+    std::cout <<std::left << std::setw(20) << suma;
+    std::cout << "|" ;
+    std::cout <<std::right << std::setw(20) <<  "la suma del dealer: " << controladorJuego->getDealer()->getSuma() << std::endl;
 
-    std::cout << "tu suma " << controladorJuego->getUsuario()->getSuma() << " , la suma del dealer " << controladorJuego->getDealer()->getSuma() << "\n";
-
-    int otra = inputInt("Pulse 1 para jugar otra ronda,");
+    std::cout << std::endl;
+    std::cout << std::endl;
+    std::cout << std::endl;
+    int otra = inputInt("Pulse 1 para jugar otra ronda:");
     if (otra != 1){
         break;
     }

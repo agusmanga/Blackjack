@@ -1,6 +1,7 @@
+CXX = g++
 CXXFLAGS=-Wall -Wextra -ggdb -std=c++17 -frtti 
 
-PHONY: all build clean run
+PHONY: all build clean run 
 
 all: build
 
@@ -18,7 +19,7 @@ run: build
 	./build/main.o \
 	./build/Dealer.o \
 	./build/User.o \
-	./build/controladorJuego.o \
+	./build/controladorJuego.o 
 	
 	@mkdir -p $$(dirname $@)
 	$(CXX) -o $@ $(CXXFLAGS) $^

@@ -48,7 +48,7 @@ void Deck::resetDeck(){
 
 std::vector<Card*> Deck::inicializarDeck(){
     std::vector <Card*> retorno;
-    std::string palos[4] = {"Corazones", "Diamantes", "Treboles", "Picas"};
+    std::string palos[4] = {"Corazones", "Diamantes", "Treboles ", "Espadas "};
 
     for (int i = 0; i < 4; i++) {
         for (int j = 1; j < 13; j++) {
