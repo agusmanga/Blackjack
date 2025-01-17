@@ -96,7 +96,7 @@ while (true){
         bool retorno = controladorJuego->igualar();
         if (retorno){
             std::cout << std::endl;
-            std::cout << std::right << std::setw(50) << "||¡¡GANA EL DEALER :( !!||"<<std::endl;
+            std::cout << std::right << std::setw(50) << "||¡¡GANA EL DEALER !!||"<<std::endl;
         }
         else {
             if (controladorJuego->getUsuario()->getSuma() == controladorJuego->getDealer()->getSuma()){
@@ -112,7 +112,7 @@ while (true){
     }
     else {
         std::cout << std::endl;
-        std::cout << std::right << std::setw(50) << "||¡¡GANA EL DEALER :( !!||"<<std::endl;
+        std::cout << std::right << std::setw(50) << "||¡¡GANA EL DEALER !!||"<<std::endl;
     }
     std::cout << std::endl;
     std::string suma = "Tu suma: " + std::to_string(controladorJuego->getUsuario()->getSuma());

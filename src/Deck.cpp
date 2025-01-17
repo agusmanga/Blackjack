@@ -39,7 +39,7 @@ Card* Deck::dealCard(){
 
 void Deck::resetDeck(){
     cards.clear();
-    std::cout<<"reiniciando Deck...\n";
+    std::cout<<"reiniciando el mazo...\n";
     cards = inicializarDeck();
     size = cards.size();
     shuffle();
